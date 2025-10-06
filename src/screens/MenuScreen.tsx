@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MagnifyingGlassIcon, StarIcon } from '@heroicons/react/24/solid';
 import { foodItems } from '../data/foodItems';
-import { FoodItem } from '../contexts/CartContext';
+import type { FoodItem } from '../contexts/CartContext';
 
 const MenuScreen: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');

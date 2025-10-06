@@ -1,4 +1,4 @@
-import { FoodItem } from '../contexts/CartContext';
+import type { FoodItem } from '../contexts/CartContext';
 
 export const foodItems: FoodItem[] = [
   {
