@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import './LiquidEther.css';
 
 export interface LiquidEtherProps {
   mouseForce?: number;
@@ -1219,9 +1220,8 @@ export default function LiquidEther({
   return (
     <div
       ref={mountRef}
-      className={`w-full h-full relative overflow-hidden pointer-events-none touch-none ${className || ''}`}
-      style={style}
+      className={`liquid-ether-container ${className || ''}`}
+      style={{ touchAction: 'none', ...style }}
     />
   );
 }
-

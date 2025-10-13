@@ -6,8 +6,8 @@ const HomeScreen: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="max-w-6xl mx-auto">
-      <div className="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-sm">
+    <div className="relative w-screen h-screen overflow-hidden">
+      <div className="absolute inset-0">
         <LiquidEther
           colors={["#5227FF", "#FF9FFC", "#B19EEF"]}
           mouseForce={20}
@@ -26,38 +26,14 @@ const HomeScreen: React.FC = () => {
           autoRampDuration={0.6}
         />
 
-        {/* Overlay content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 pointer-events-none">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-sm mb-4">
-            Welcome to CanteenGo
-          </h1>
-          <p className="text-white/90 max-w-2xl mb-8">
-            Fresh, delicious meals from your campus canteen. Skip the queue and order in seconds.
-          </p>
-          <div className="pointer-events-auto">
-            <button
-              onClick={() => navigate('/menu')}
-              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Start Ordering
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Content teaser */}
-      <div className="mt-10 grid md:grid-cols-3 gap-6">
-        <div className="bg-white rounded-xl p-6 shadow-sm">
-          <h3 className="font-semibold text-gray-900 mb-2">Curated Menu</h3>
-          <p className="text-gray-600 text-sm">Discover popular dishes and new favorites.</p>
-        </div>
-        <div className="bg-white rounded-xl p-6 shadow-sm">
-          <h3 className="font-semibold text-gray-900 mb-2">Zero Queue</h3>
-          <p className="text-gray-600 text-sm">Order ahead and pick up when it’s ready.</p>
-        </div>
-        <div className="bg-white rounded-xl p-6 shadow-sm">
-          <h3 className="font-semibold text-gray-900 mb-2">Student Friendly</h3>
-          <p className="text-gray-600 text-sm">Affordable options made for campus life.</p>
+        {/* Overlay content - only the button */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <button
+            onClick={() => navigate('/menu')}
+            className="pointer-events-auto bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+          >
+            Start Ordering
+          </button>
         </div>
       </div>
     </div>
@@ -65,4 +41,3 @@ const HomeScreen: React.FC = () => {
 };
 
 export default HomeScreen;
-
