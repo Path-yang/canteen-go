@@ -31,7 +31,8 @@ const ItemDetailsScreen: React.FC = () => {
     for (let i = 0; i < quantity; i++) {
       addItem(item);
     }
-    navigate('/cart');
+    // After adding to cart, return to the menu instead of the cart
+    navigate('/');
   };
 
   return (
