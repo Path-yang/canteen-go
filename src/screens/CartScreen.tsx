@@ -7,6 +7,12 @@ const CartScreen: React.FC = () => {
   const navigate = useNavigate();
   const { state, updateQuantity, removeItem, clearCart } = useCart();
 
+  const handleClearCart = () => {
+    if (window.confirm('Are you sure you want to clear your cart? All items will be removed.')) {
+      clearCart();
+    }
+  };
+
   const handleCheckout = () => {
     // Simulate order placement
     alert(`Order placed successfully! Total: $${state.total.toFixed(2)}\n\nYour order will be ready in 15-20 minutes.`);
@@ -60,7 +66,7 @@ const CartScreen: React.FC = () => {
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-gray-900">Your Order</h2>
                 <button
-                  onClick={clearCart}
+                  onClick={handleClearCart}
                   className="text-red-500 hover:text-red-700 text-sm font-medium transition-colors"
                 >
                   Clear Cart
