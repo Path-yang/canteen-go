@@ -53,11 +53,11 @@ const MenuScreen: React.FC = () => {
     const store = stores.find(s => s.id === item.storeId);
 
     return (
-      <div className="block bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden group relative">
+      <div className="block bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden group relative animate-fade-in-up">
         <Link to={`/item/${item.id}`}>
           <div className="p-6">
             <div className="flex items-start space-x-4">
-              <div className="text-5xl flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
+              <div className="text-5xl flex-shrink-0 group-hover:scale-110 group-hover:animate-float transition-transform duration-200">
                 {item.image}
               </div>
               <div className="flex-1 min-w-0">
@@ -115,10 +115,10 @@ const MenuScreen: React.FC = () => {
             e.preventDefault();
             toggleFavorite(item.id);
           }}
-          className="absolute top-4 right-4 p-2 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white transition-colors z-10"
+          className="absolute top-4 right-4 p-2 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white transition-all hover:scale-110 z-10"
         >
           {isFavorite ? (
-            <HeartSolid className="w-5 h-5 text-red-500" />
+            <HeartSolid className="w-5 h-5 text-red-500 animate-pulse-soft" />
           ) : (
             <HeartOutline className="w-5 h-5 text-gray-400 hover:text-red-500" />
           )}
@@ -134,7 +134,7 @@ const MenuScreen: React.FC = () => {
     return (
       <button
         onClick={() => setSelectedStore(isSelected ? 'All' : store.id)}
-        className={`flex items-start space-x-3 p-4 rounded-xl border-2 transition-all ${
+        className={`flex items-start space-x-3 p-4 rounded-xl border-2 transition-all animate-scale-in hover:-translate-y-1 ${
           isSelected
             ? 'border-orange-500 bg-orange-50'
             : 'border-gray-200 hover:border-orange-300 bg-white'
@@ -182,18 +182,18 @@ const MenuScreen: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Hero Section */}
         <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4 animate-fade-in-down">
           Welcome to CanteenGo
         </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto animate-fade-in-up delay-100">
           Order from your favorite hawker stalls and skip the queues. Fresh, authentic Singapore flavors delivered fast.
         </p>
       </div>
 
       {/* Stores Section */}
-      <div className="mb-8">
+      <div className="mb-8 animate-fade-in delay-200">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl font-bold text-gray-900">Browse by Stall</h2>
+          <h2 className="text-2xl font-bold text-gray-900 animate-slide-in-left">Browse by Stall</h2>
           {selectedStore !== 'All' && (
             <button
               onClick={() => setSelectedStore('All')}
@@ -211,7 +211,7 @@ const MenuScreen: React.FC = () => {
       </div>
 
       {/* Search and Filter */}
-      <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
+      <div className="bg-white rounded-xl shadow-sm p-6 mb-8 animate-fade-in-up delay-300">
         <div className="space-y-4">
           {/* Search Bar */}
           <div className="relative">

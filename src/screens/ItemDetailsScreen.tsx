@@ -40,21 +40,21 @@ const ItemDetailsScreen: React.FC = () => {
       {/* Back Button */}
       <button
         onClick={() => navigate('/menu')}
-        className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 mb-6 transition-colors"
+        className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 mb-6 transition-colors animate-fade-in-down"
       >
         <ArrowLeftIcon className="w-5 h-5" />
         <span>Back to Menu</span>
       </button>
 
-      <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+      <div className="bg-white rounded-xl shadow-sm overflow-hidden animate-scale-in">
         <div className="md:flex">
           {/* Image Section */}
           <div className="md:w-1/2 bg-gradient-to-br from-orange-50 to-orange-100 p-12 flex items-center justify-center">
-            <div className="text-8xl">{item.image}</div>
+            <div className="text-8xl animate-float">{item.image}</div>
           </div>
 
           {/* Details Section */}
-          <div className="md:w-1/2 p-8">
+          <div className="md:w-1/2 p-8 animate-fade-in-up delay-200">
             <div className="mb-6">
               <div className="flex items-center justify-between mb-4">
                 <h1 className="text-3xl font-bold text-gray-900">{item.name}</h1>
@@ -101,7 +101,7 @@ const ItemDetailsScreen: React.FC = () => {
             {/* Add to Cart Button */}
             <button
               onClick={handleAddToCart}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-lg font-semibold text-lg transition-all duration-200 flex items-center justify-center space-x-2 hover:scale-105 active:scale-95"
             >
               <PlusIcon className="w-6 h-6" />
               <span>Add to Cart - ${(item.price * quantity).toFixed(2)}</span>
