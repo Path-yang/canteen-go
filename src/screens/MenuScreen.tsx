@@ -241,7 +241,7 @@ const MenuScreen: React.FC = () => {
             {categories.map(category => (
               <button
                 key={category}
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => setSelectedCategory(selectedCategory === category ? 'All' : category)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   selectedCategory === category
                     ? 'bg-orange-500 text-white'
