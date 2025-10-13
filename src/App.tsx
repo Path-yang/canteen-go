@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './contexts/CartContext';
 import Header from './components/Header';
 import MenuScreen from './screens/MenuScreen';
+import HomeScreen from './screens/HomeScreen';
 import ItemDetailsScreen from './screens/ItemDetailsScreen';
 import CartScreen from './screens/CartScreen';
 
@@ -13,7 +14,8 @@ function App() {
           <Header />
           <main className="container mx-auto px-4 py-8">
             <Routes>
-              <Route path="/" element={<MenuScreen />} />
+              <Route path="/" element={<HomeScreen />} />
+              <Route path="/menu" element={<MenuScreen />} />
               <Route path="/item/:id" element={<ItemDetailsScreen />} />
               <Route path="/cart" element={<CartScreen />} />
             </Routes>

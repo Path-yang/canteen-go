@@ -10,6 +10,11 @@ export interface FoodItem {
   category: string;
   rating: number;
   prepTime: string;
+  storeId: string;
+  storeName: string;
+  isPopular?: boolean;
+  isVegetarian?: boolean;
+  spiceLevel?: number;
 }
 
 export interface CartItem extends FoodItem {

@@ -9,7 +9,9 @@ export const foodItems: FoodItem[] = [
     image: '🍗',
     category: 'Main Course',
     rating: 4.8,
-    prepTime: '10-15 min'
+    prepTime: '10-15 min',
+    storeId: 'canteen-1',
+    storeName: 'Campus Canteen'
   },
   {
     id: '2',
@@ -19,7 +21,9 @@ export const foodItems: FoodItem[] = [
     image: '🍜',
     category: 'Soup',
     rating: 4.6,
-    prepTime: '12-18 min'
+    prepTime: '12-18 min',
+    storeId: 'canteen-1',
+    storeName: 'Campus Canteen'
   },
   {
     id: '3',
@@ -29,7 +33,9 @@ export const foodItems: FoodItem[] = [
     image: '🍝',
     category: 'Noodles',
     rating: 4.7,
-    prepTime: '8-12 min'
+    prepTime: '8-12 min',
+    storeId: 'canteen-1',
+    storeName: 'Campus Canteen'
   },
   {
     id: '4',
@@ -39,7 +45,9 @@ export const foodItems: FoodItem[] = [
     image: '🍚',
     category: 'Main Course',
     rating: 4.9,
-    prepTime: '15-20 min'
+    prepTime: '15-20 min',
+    storeId: 'canteen-1',
+    storeName: 'Campus Canteen'
   },
   {
     id: '5',
@@ -49,7 +57,9 @@ export const foodItems: FoodItem[] = [
     image: '🥘',
     category: 'Soup',
     rating: 4.5,
-    prepTime: '20-25 min'
+    prepTime: '20-25 min',
+    storeId: 'canteen-1',
+    storeName: 'Campus Canteen'
   },
   {
     id: '6',
@@ -59,7 +69,9 @@ export const foodItems: FoodItem[] = [
     image: '🍖',
     category: 'Western',
     rating: 4.4,
-    prepTime: '15-20 min'
+    prepTime: '15-20 min',
+    storeId: 'canteen-1',
+    storeName: 'Campus Canteen'
   },
   {
     id: '7',
@@ -69,7 +81,9 @@ export const foodItems: FoodItem[] = [
     image: '🍲',
     category: 'Noodles',
     rating: 4.3,
-    prepTime: '5-8 min'
+    prepTime: '5-8 min',
+    storeId: 'canteen-1',
+    storeName: 'Campus Canteen'
   },
   {
     id: '8',
@@ -79,7 +93,9 @@ export const foodItems: FoodItem[] = [
     image: '🥞',
     category: 'Snacks',
     rating: 4.6,
-    prepTime: '3-5 min'
+    prepTime: '3-5 min',
+    storeId: 'canteen-1',
+    storeName: 'Campus Canteen'
   },
   {
     id: '9',
@@ -89,7 +105,9 @@ export const foodItems: FoodItem[] = [
     image: '🧋',
     category: 'Beverages',
     rating: 4.7,
-    prepTime: '2-3 min'
+    prepTime: '2-3 min',
+    storeId: 'canteen-1',
+    storeName: 'Campus Canteen'
   },
   {
     id: '10',
@@ -99,6 +117,8 @@ export const foodItems: FoodItem[] = [
     image: '🍧',
     category: 'Desserts',
     rating: 4.5,
-    prepTime: '3-5 min'
+    prepTime: '3-5 min',
+    storeId: 'canteen-1',
+    storeName: 'Campus Canteen'
   }
 ];

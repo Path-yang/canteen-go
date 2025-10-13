@@ -18,7 +18,7 @@ const ItemDetailsScreen: React.FC = () => {
         <div className="text-6xl mb-4">😕</div>
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Item not found</h2>
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/menu')}
           className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg transition-colors"
         >
           Back to Menu
@@ -31,15 +31,15 @@ const ItemDetailsScreen: React.FC = () => {
     for (let i = 0; i < quantity; i++) {
       addItem(item);
     }
-    // After adding to cart, return to the menu instead of the cart
-    navigate('/');
+    // After adding to cart, return to the menu
+    navigate('/menu');
   };
 
   return (
     <div className="max-w-4xl mx-auto">
       {/* Back Button */}
       <button
-        onClick={() => navigate('/')}
+        onClick={() => navigate('/menu')}
         className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 mb-6 transition-colors"
       >
         <ArrowLeftIcon className="w-5 h-5" />
