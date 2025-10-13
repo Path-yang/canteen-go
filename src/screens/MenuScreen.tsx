@@ -165,9 +165,23 @@ const MenuScreen: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto">
-      {/* Hero Section */}
-      <div className="text-center mb-8">
+    <div className="relative min-h-screen">
+      {/* Background Image with Overlay */}
+      <div
+        className="fixed inset-0 z-0"
+        style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1920&q=80)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          opacity: 0.08
+        }}
+      />
+
+      {/* Content Container */}
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Hero Section */}
+        <div className="text-center mb-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           Welcome to CanteenGo
         </h1>
@@ -293,6 +307,7 @@ const MenuScreen: React.FC = () => {
           </button>
         </div>
       )}
+      </div>
     </div>
   );
 };
