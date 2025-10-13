@@ -13,6 +13,12 @@ const CartScreen: React.FC = () => {
     }
   };
 
+  const handleRemoveItem = (itemId: string, itemName: string) => {
+    if (window.confirm(`Remove ${itemName} from your cart?`)) {
+      removeItem(itemId);
+    }
+  };
+
   const handleCheckout = () => {
     // Simulate order placement
     alert(`Order placed successfully! Total: $${state.total.toFixed(2)}\n\nYour order will be ready in 15-20 minutes.`);
@@ -113,7 +119,7 @@ const CartScreen: React.FC = () => {
 
                       {/* Remove Button */}
                       <button
-                        onClick={() => removeItem(item.id)}
+                        onClick={() => handleRemoveItem(item.id, item.name)}
                         className="text-red-500 hover:text-red-700 p-2 transition-colors"
                       >
                         <TrashIcon className="w-5 h-5" />
