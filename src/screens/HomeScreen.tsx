@@ -30,7 +30,7 @@ const HomeScreen: React.FC = () => {
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <button
             onClick={() => navigate('/menu')}
-            className="pointer-events-auto bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+            className="pointer-events-auto bg-orange-500 hover:bg-orange-600 text-white px-10 py-5 rounded-xl font-bold text-2xl md:text-3xl shadow-lg transition-transform duration-200 hover:scale-105"
           >
             Start Ordering
           </button>
