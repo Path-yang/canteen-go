@@ -6,6 +6,7 @@ import { HeartIcon as HeartSolid } from '@heroicons/react/24/solid';
 import { foodItems } from '../data/foodItems';
 import { stores } from '../data/stores';
 import type { FoodItem } from '../contexts/CartContext';
+import ElectricBorder from '../components/ElectricBorder';
 
 const MenuScreen: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -53,11 +54,11 @@ const MenuScreen: React.FC = () => {
     const store = stores.find(s => s.id === item.storeId);
 
     return (
-      <div className="block bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden group relative animate-fade-in-up">
+      <div className="block bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden group relative animate-fade-in-up">
         <Link to={`/item/${item.id}`}>
           <div className="p-6">
             <div className="flex items-start space-x-4">
-              <div className="text-5xl flex-shrink-0 group-hover:scale-110 group-hover:animate-float transition-transform duration-200">
+              <div className="text-5xl flex-shrink-0 group-hover:scale-105 transition-transform duration-300 ease-out">
                 {item.image}
               </div>
               <div className="flex-1 min-w-0">
@@ -134,7 +135,7 @@ const MenuScreen: React.FC = () => {
     return (
       <button
         onClick={() => setSelectedStore(isSelected ? 'All' : store.id)}
-        className={`flex items-start space-x-3 p-4 rounded-xl border-2 transition-all animate-scale-in hover:-translate-y-1 ${
+        className={`flex items-start space-x-3 p-4 rounded-xl border-2 transition-all duration-300 animate-scale-in hover:-translate-y-0.5 ${
           isSelected
             ? 'border-orange-500 bg-orange-50'
             : 'border-gray-200 hover:border-orange-300 bg-white'
@@ -284,7 +285,9 @@ const MenuScreen: React.FC = () => {
       {/* Food Items Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         {filteredItems.map(item => (
-          <FoodCard key={item.id} item={item} />
+          <ElectricBorder key={item.id} color="#7df9ff" speed={1} chaos={0.5} thickness={2} style={{ borderRadius: 12 }}>
+            <FoodCard item={item} />
+          </ElectricBorder>
         ))}
       </div>
 

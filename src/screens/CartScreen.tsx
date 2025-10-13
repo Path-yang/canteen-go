@@ -50,13 +50,13 @@ const CartScreen: React.FC = () => {
           <span>Back to Menu</span>
         </button>
 
-        <div className="text-center py-12 animate-fade-in-up">
-          <div className="text-6xl mb-4 animate-float">🛒</div>
+        <div className="text-center py-12 animate-fade-in">
+          <div className="text-6xl mb-4">🛒</div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Your cart is empty</h2>
           <p className="text-gray-600 mb-8">Add some delicious items from our menu!</p>
           <button
             onClick={() => navigate('/menu')}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg transition-all hover:scale-105 active:scale-95"
+            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
           >
             Browse Menu
           </button>
@@ -78,7 +78,7 @@ const CartScreen: React.FC = () => {
 
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Cart Items */}
-        <div className="lg:w-2/3 animate-slide-in-left">
+        <div className="lg:w-2/3 animate-fade-in">
           <div className="bg-white rounded-xl shadow-sm overflow-hidden">
             <div className="p-6 border-b border-gray-200">
               <div className="flex items-center justify-between">
@@ -145,7 +145,7 @@ const CartScreen: React.FC = () => {
         </div>
 
         {/* Order Summary */}
-        <div className="lg:w-1/3 animate-slide-in-right">
+        <div className="lg:w-1/3 animate-fade-in delay-100">
           <div className="bg-white rounded-xl shadow-sm p-6 sticky top-6">
             <h3 className="text-xl font-bold text-gray-900 mb-6">Order Summary</h3>
             
@@ -172,7 +172,7 @@ const CartScreen: React.FC = () => {
 
             <button
               onClick={handleCheckout}
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-lg font-semibold text-lg transition-all duration-200 flex items-center justify-center space-x-2 hover:scale-105 active:scale-95"
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center space-x-2 hover:scale-[1.02] active:scale-[0.98]"
             >
               <CheckCircleIcon className="w-6 h-6" />
               <span>Place Order</span>
