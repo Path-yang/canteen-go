@@ -1,21 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeftIcon, TrashIcon, PlusIcon, MinusIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import { useCart } from '../contexts/CartContext';
+import ConfirmModal from '../components/ConfirmModal';
 
 const CartScreen: React.FC = () => {
   const navigate = useNavigate();
   const { state, updateQuantity, removeItem, clearCart } = useCart();
+  const [showClearCartModal, setShowClearCartModal] = useState(false);
+  const [showRemoveItemModal, setShowRemoveItemModal] = useState(false);
+  const [itemToRemove, setItemToRemove] = useState<{ id: string; name: string } | null>(null);
 
   const handleClearCart = () => {
-    if (window.confirm('Are you sure you want to clear your cart? All items will be removed.')) {
-      clearCart();
-    }
+    setShowClearCartModal(true);
+  };
+
+  const confirmClearCart = () => {
+    clearCart();
   };
 
   const handleRemoveItem = (itemId: string, itemName: string) => {
-    if (window.confirm(`Remove ${itemName} from your cart?`)) {
-      removeItem(itemId);
+    setItemToRemove({ id: itemId, name: itemName });
+    setShowRemoveItemModal(true);
+  };
+
+  const confirmRemoveItem = () => {
+    if (itemToRemove) {
+      removeItem(itemToRemove.id);
+      setItemToRemove(null);
     }
   };
 
@@ -174,6 +186,30 @@ const CartScreen: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Confirmation Modals */}
+      <ConfirmModal
+        isOpen={showClearCartModal}
+        onClose={() => setShowClearCartModal(false)}
+        onConfirm={confirmClearCart}
+        title="Clear Cart"
+        message="Are you sure you want to clear your cart? All items will be removed."
+        confirmText="Clear Cart"
+        cancelText="Keep Items"
+      />
+
+      <ConfirmModal
+        isOpen={showRemoveItemModal}
+        onClose={() => {
+          setShowRemoveItemModal(false);
+          setItemToRemove(null);
+        }}
+        onConfirm={confirmRemoveItem}
+        title="Remove Item"
+        message={`Remove ${itemToRemove?.name || 'this item'} from your cart?`}
+        confirmText="Remove"
+        cancelText="Keep"
+      />
     </div>
   );
 };
