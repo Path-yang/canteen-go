@@ -32,7 +32,7 @@ const HomeScreen: React.FC = () => {
           <SplitText
             text="Welcome to Canteen Go"
             tag="h1"
-            className="text-white drop-shadow-xl font-extrabold text-4xl md:text-6xl"
+            className="text-black font-extrabold text-4xl md:text-6xl"
             delay={80}
             duration={0.6}
             ease="power3.out"
