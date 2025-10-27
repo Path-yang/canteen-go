@@ -14,7 +14,27 @@ export const foodItems: FoodItem[] = [
     storeName: 'Chicken Rice Express',
     isPopular: true,
     isVegetarian: false,
-    spiceLevel: 1
+    spiceLevel: 1,
+    calories: 450,
+    allergens: ['Soy', 'Sesame'],
+    reviews: [
+      {
+        id: '1a',
+        userId: 'user1',
+        userName: 'Sarah T.',
+        rating: 5,
+        comment: 'Absolutely delicious! The chicken is so tender and flavorful.',
+        date: '2025-10-20'
+      },
+      {
+        id: '1b',
+        userId: 'user2',
+        userName: 'Mike L.',
+        rating: 4,
+        comment: 'Great taste, generous portion. Would order again!',
+        date: '2025-10-22'
+      }
+    ]
   },
   {
     id: '1b',
@@ -29,7 +49,10 @@ export const foodItems: FoodItem[] = [
     storeName: 'Chicken Rice Express',
     isPopular: false,
     isVegetarian: false,
-    spiceLevel: 0
+    spiceLevel: 0,
+    calories: 520,
+    allergens: ['Soy', 'Wheat'],
+    reviews: []
   },
   {
     id: '2',
@@ -44,7 +67,10 @@ export const foodItems: FoodItem[] = [
     storeName: 'Noodle Haven',
     isPopular: true,
     isVegetarian: false,
-    spiceLevel: 2
+    spiceLevel: 2,
+    calories: 580,
+    allergens: ['Shellfish', 'Fish', 'Coconut'],
+    reviews: []
   },
   {
     id: '3',
@@ -59,7 +85,10 @@ export const foodItems: FoodItem[] = [
     storeName: 'Noodle Haven',
     isPopular: true,
     isVegetarian: false,
-    spiceLevel: 1
+    spiceLevel: 1,
+    calories: 650,
+    allergens: ['Shellfish', 'Eggs', 'Soy'],
+    reviews: []
   },
   {
     id: '4',
@@ -74,7 +103,10 @@ export const foodItems: FoodItem[] = [
     storeName: "Mama's Malay Kitchen",
     isPopular: true,
     isVegetarian: false,
-    spiceLevel: 2
+    spiceLevel: 2,
+    calories: 680,
+    allergens: ['Fish', 'Peanuts', 'Eggs', 'Coconut'],
+    reviews: []
   },
   {
     id: '4b',
@@ -89,7 +121,10 @@ export const foodItems: FoodItem[] = [
     storeName: "Mama's Malay Kitchen",
     isPopular: false,
     isVegetarian: false,
-    spiceLevel: 2
+    spiceLevel: 2,
+    calories: 490,
+    allergens: ['Eggs', 'Wheat', 'Shellfish'],
+    reviews: []
   },
   {
     id: '5',
@@ -104,7 +139,10 @@ export const foodItems: FoodItem[] = [
     storeName: "Uncle Wong's Bak Kut Teh",
     isPopular: false,
     isVegetarian: false,
-    spiceLevel: 0
+    spiceLevel: 0,
+    calories: 530,
+    allergens: ['Soy', 'Wheat'],
+    reviews: []
   },
   {
     id: '6',
@@ -119,7 +157,10 @@ export const foodItems: FoodItem[] = [
     storeName: 'Western Grill',
     isPopular: false,
     isVegetarian: false,
-    spiceLevel: 0
+    spiceLevel: 0,
+    calories: 720,
+    allergens: ['Wheat', 'Eggs', 'Dairy'],
+    reviews: []
   },
   {
     id: '6b',
@@ -134,7 +175,10 @@ export const foodItems: FoodItem[] = [
     storeName: 'Western Grill',
     isPopular: false,
     isVegetarian: false,
-    spiceLevel: 0
+    spiceLevel: 0,
+    calories: 680,
+    allergens: ['Fish', 'Wheat', 'Eggs'],
+    reviews: []
   },
   {
     id: '7',
@@ -149,7 +193,10 @@ export const foodItems: FoodItem[] = [
     storeName: 'Fish Ball Specialist',
     isPopular: false,
     isVegetarian: false,
-    spiceLevel: 1
+    spiceLevel: 1,
+    calories: 420,
+    allergens: ['Fish', 'Wheat', 'Eggs'],
+    reviews: []
   },
   {
     id: '8',
@@ -164,7 +211,10 @@ export const foodItems: FoodItem[] = [
     storeName: 'Mr. Prata',
     isPopular: true,
     isVegetarian: true,
-    spiceLevel: 2
+    spiceLevel: 2,
+    calories: 310,
+    allergens: ['Wheat', 'Eggs'],
+    reviews: []
   },
   {
     id: '8b',
@@ -179,7 +229,10 @@ export const foodItems: FoodItem[] = [
     storeName: 'Mr. Prata',
     isPopular: true,
     isVegetarian: true,
-    spiceLevel: 0
+    spiceLevel: 0,
+    calories: 380,
+    allergens: ['Wheat', 'Dairy', 'Eggs'],
+    reviews: []
   },
   {
     id: '9',
@@ -194,7 +247,10 @@ export const foodItems: FoodItem[] = [
     storeName: 'Bubble Tea Corner',
     isPopular: true,
     isVegetarian: true,
-    spiceLevel: 0
+    spiceLevel: 0,
+    calories: 280,
+    allergens: ['Dairy'],
+    reviews: []
   },
   {
     id: '9b',
@@ -209,7 +265,10 @@ export const foodItems: FoodItem[] = [
     storeName: 'Bubble Tea Corner',
     isPopular: false,
     isVegetarian: true,
-    spiceLevel: 0
+    spiceLevel: 0,
+    calories: 120,
+    allergens: ['Dairy'],
+    reviews: []
   },
   {
     id: '10',
@@ -224,7 +283,10 @@ export const foodItems: FoodItem[] = [
     storeName: 'Dessert Paradise',
     isPopular: true,
     isVegetarian: true,
-    spiceLevel: 0
+    spiceLevel: 0,
+    calories: 220,
+    allergens: [],
+    reviews: []
   },
   {
     id: '10b',
@@ -239,6 +301,9 @@ export const foodItems: FoodItem[] = [
     storeName: 'Dessert Paradise',
     isPopular: false,
     isVegetarian: true,
-    spiceLevel: 0
+    spiceLevel: 0,
+    calories: 250,
+    allergens: ['Coconut'],
+    reviews: []
   }
 ];

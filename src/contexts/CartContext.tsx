@@ -15,6 +15,18 @@ export interface FoodItem {
   isPopular?: boolean;
   isVegetarian?: boolean;
   spiceLevel?: number;
+  calories?: number;
+  allergens?: string[];
+  reviews?: Review[];
+}
+
+export interface Review {
+  id: string;
+  userId: string;
+  userName: string;
+  rating: number;
+  comment: string;
+  date: string;
 }
 
 export interface CartItem extends FoodItem {

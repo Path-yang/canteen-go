@@ -3,12 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowLeftIcon, TrashIcon, PlusIcon, MinusIcon, CheckCircleIcon } from '@heroicons/react/24/solid';
 import { useCart } from '../contexts/CartContext';
 import ConfirmModal from '../components/ConfirmModal';
+import PaymentModal from '../components/PaymentModal';
 
 const CartScreen: React.FC = () => {
   const navigate = useNavigate();
   const { state, updateQuantity, removeItem, clearCart } = useCart();
   const [showClearCartModal, setShowClearCartModal] = useState(false);
   const [showRemoveItemModal, setShowRemoveItemModal] = useState(false);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [itemToRemove, setItemToRemove] = useState<{ id: string; name: string } | null>(null);
 
   const handleClearCart = () => {
@@ -32,8 +34,12 @@ const CartScreen: React.FC = () => {
   };
 
   const handleCheckout = () => {
-    // Simulate order placement
-    alert(`Order placed successfully! Total: $${state.total.toFixed(2)}\n\nYour order will be ready in 15-20 minutes.`);
+    setShowPaymentModal(true);
+  };
+
+  const handlePaymentComplete = (paymentMethod: 'card' | 'cash') => {
+    const paymentMethodText = paymentMethod === 'card' ? 'credit card' : 'cash';
+    alert(`Order placed successfully! Payment method: ${paymentMethodText}\nTotal: $${state.total.toFixed(2)}\n\nYour order will be ready in 15-20 minutes. You will receive a notification when it's ready.`);
     clearCart();
     navigate('/menu');
   };
@@ -209,6 +215,14 @@ const CartScreen: React.FC = () => {
         message={`Remove ${itemToRemove?.name || 'this item'} from your cart?`}
         confirmText="Remove"
         cancelText="Keep"
+      />
+
+      {/* Payment Modal */}
+      <PaymentModal
+        isOpen={showPaymentModal}
+        onClose={() => setShowPaymentModal(false)}
+        onPaymentComplete={handlePaymentComplete}
+        total={state.total}
       />
     </div>
   );
