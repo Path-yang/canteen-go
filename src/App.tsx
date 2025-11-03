@@ -7,6 +7,7 @@ import HomeScreen from './screens/HomeScreen';
 import ItemDetailsScreen from './screens/ItemDetailsScreen';
 import CartScreen from './screens/CartScreen';
 import StaffDashboard from './screens/StaffDashboard';
+import OrderHistory from './screens/OrderHistory';
 
 function AppInner() {
   const location = useLocation();
@@ -20,6 +21,7 @@ function AppInner() {
           <Route path="/menu" element={<MenuScreen />} />
           <Route path="/item/:id" element={<ItemDetailsScreen />} />
           <Route path="/cart" element={<CartScreen />} />
+          <Route path="/orders" element={<OrderHistory />} />
           <Route path="/staff" element={<StaffDashboard />} />
         </Routes>
       </main>

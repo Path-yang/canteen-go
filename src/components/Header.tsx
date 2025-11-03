@@ -23,6 +23,14 @@ const Header: React.FC = () => {
           </Link>
 
           <div className="flex items-center space-x-3">
+            {/* Order History Link */}
+            <Link
+              to="/orders"
+              className="hidden md:flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors duration-200 font-medium"
+            >
+              <span>Orders</span>
+            </Link>
+
             {/* Staff Dashboard Link */}
             <Link
               to="/staff"
